@@ -24,6 +24,7 @@ for i in range(9):
 	plt.subplot(330 + 1 + i)
 	dog_name = dog_folder + "dog." + str(i) + ".jpg"
 	dog_image = plt.imread(dog_name)
+	dog_image = cv2.resize(dog_image, (200,200))
 	plt.imshow(dog_image)
 
 plt.show()
@@ -33,6 +34,7 @@ for i in range(9):
 	plt.subplot(330 + 1 + i)
 	cat_name = cat_folder + "cat." + str(i) + ".jpg"
 	cat_image = plt.imread(cat_name)
+	cat_image = cv2.resize(cat_image, (200,200))
 	plt.imshow(cat_image)
 plt.show()
 
@@ -86,7 +88,7 @@ def define_model():
 	# model.add(Conv2D(256, (3, 3), activation="relu", padding="same", input_shape=(200, 200, 3)))
 	# model.add(MaxPooling2D((2, 2)))
 	# model.add(Dropout(0.2))
-
+	model.add(Dense(32, activation="relu"))
 	model.add(Flatten())
 	model.add(Dense(1, activation="sigmoid"))
 	# compile model
@@ -159,8 +161,6 @@ def run_example():
 		print("this is a dog.")
 	if(c == 0):
 		print("this is a cat")
-	else:
-		print("something else")
 
 	plt.title("image")
 	img = plt.imread(file_name)
