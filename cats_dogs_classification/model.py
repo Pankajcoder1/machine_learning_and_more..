@@ -112,13 +112,10 @@ def run_example():
 		print("this is a dog.")
 	if(c == 0):
 		print("this is a cat")
-	else:
-		print("something else")
 
 	plt.title("image")
 	img = plt.imread(file_name)
 	plt.imshow(img)
-
 	plt.show()
 
 run_example()
