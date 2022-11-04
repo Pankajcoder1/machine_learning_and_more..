@@ -11,7 +11,7 @@
 
 
 ## Tech used
- - numpy
+ - [numpy](https://www.scaler.com/topics/numpy-arithmetic-operations/)
  - matplotlib.pyplot
  - opencv
  - keras
